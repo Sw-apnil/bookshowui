@@ -17,3 +17,15 @@ body {
   color: white;
   background-color: #09090b;
 }
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+::webkit-calender-picker-indicator {
+  filter: invert(1);
+}
