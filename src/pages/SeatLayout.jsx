@@ -33,7 +33,7 @@ const SeatLayout = () => {
   const navigate = useNavigate();
 
   // ---------------- GET SHOW DATA ----------------
-  const getShow = () => {
+  const getShow = async () => {
     // Dummy data me se matching show nikal rahe
     const showData = dummyShowsData.find((item) => item._id === id);
 
