@@ -78,7 +78,7 @@ const SeatLayout = () => {
   const getOccupiedSeats = async () => {
     try {
       const { data } = await axios.get(
-        `/api/bookings/seats/${selectedTime.showId}`
+        `/api/booking/seats/${selectedTime.showId}`
       );
       console.log(data);
       if (data.success) {
@@ -112,9 +112,9 @@ const SeatLayout = () => {
       );
 
       if (data.success) {
-       // window.location.href = data.url;
-         toast.success(data.message);
-        navigate("/my-bookings");
+        window.location.href = data.url;
+        //  toast.success(data.message);
+        // navigate("/my-bookings");
       } else {
         toast.error(data.message);
       }

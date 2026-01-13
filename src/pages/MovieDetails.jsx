@@ -107,7 +107,8 @@ const MovieDetails = () => {
             >
               <Heart
                 className={`w-5 h-5 ${
-                  favoriteMovies.find((movie) => movie._id === id)
+                  favoriteMovies.find((movie) => movie._id.toString() === id)
+
                     ? "fill-primary text-primary"
                     : ""
                 }`}
