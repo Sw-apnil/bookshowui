@@ -12,6 +12,7 @@ import { MenuIcon, SearchIcon, TicketPlus, XIcon } from "lucide-react";
 // icons (hamburger, search, close, ticket)
 
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { useAppContext } from "../context/AppContext";
 // Clerk hooks for auth (login status, profile button)
 
 const NavBar = () => {
@@ -28,6 +29,7 @@ const NavBar = () => {
 
   const navigate = useNavigate();
   // code ke through page change karne ke liye
+  const {favoriteMovies} = useAppContext();
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full flex items-center justify-between px-6 md:px-16 lg:px-36 py-5">
@@ -100,16 +102,16 @@ const NavBar = () => {
           Releases
         </Link>
 
-        <Link
-          to={"/favorite"}
+         {favoriteMovies.length> 0 && <Link
           onClick={() => {
-            window.scrollTo(0, 0);
+            scrollTo(0, 0);
             setIsOpen(false);
           }}
+          to={"/favorite"}
         >
           Favorites
-        </Link>
-        {/* Favorites abhi sirf route hai, logic baad me aayega */}
+        </Link>}
+        {/* Favorites page pe navigation */}
       </div>
 
       {/* RIGHT SECTION : SEARCH + AUTH */}
