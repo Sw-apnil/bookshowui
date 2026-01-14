@@ -36,7 +36,7 @@ const Dashboard = () => {
 
     {
       title: "Total Revenue",
-      value: currency + dashboardData.totalRevenue || "0",
+      value: `${currency}${dashboardData.totalRevenue || 0}`,
       icon: CircleDollarSignIcon,
     },
     {
